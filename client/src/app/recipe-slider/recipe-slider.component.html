@@ -1,0 +1,39 @@
+<div class="flex flex-col justify-between w-full gap-5 mt-10 mb-16">
+  <div class="mx-14">
+    <h4 class="font-normal font-lato text-coal-black font-semibold text-xl">
+      Browse {{ category | titlecase }}
+    </h4>
+  </div>
+  <div
+    class="flex flex-row max-w-[calc(100%-3.5rem)] justify-center items-center relative mx-14"
+  >
+    <button
+      class="absolute z-50 rounded-full w-10 h-10 left-0"
+      (click)="onSliderLeft()"
+    >
+      <fa-icon
+        class="mx-auto w-5 h-5 text-lg text-coal-black"
+        [icon]="faChevronLeft"
+      ></fa-icon>
+    </button>
+    <div
+      class="grid grid-flow-col xl:auto-cols-7p lg:auto-cols-6p md:auto-cols-5p sm:auto-cols-4p auto-rows-[minmax(min-content,6rem)] w-full gap-6 overflow-auto no-scrollbar scroll-smooth snap-x"
+      #slider
+    >
+      <app-recipe-slider-item
+        *ngFor="let recipe of recipes"
+        [recipe]="recipe"
+        [routerLink]="['/recipes', recipe.idMeal]"
+      ></app-recipe-slider-item>
+    </div>
+    <button
+      class="absolute z-50 rounded-full w-10 h-10 right-0"
+      (click)="onSliderRight()"
+    >
+      <fa-icon
+        class="w-5 h-5 mx-auto text-lg text-coal-black"
+        [icon]="faChevronRight"
+      ></fa-icon>
+    </button>
+  </div>
+</div>
