@@ -1,0 +1,5 @@
+<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+<app-recipe-grid-list
+  *ngIf="!isLoading"
+  [recipes]="recipes"
+></app-recipe-grid-list>
