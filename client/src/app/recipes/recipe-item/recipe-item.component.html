@@ -1,0 +1,22 @@
+<div
+  class="flex justify-end items-center bg-dark-grey max-h-full snap-start aspect-[1/1.5] cursor-pointer relative group"
+>
+  <img
+    [src]="recipe.strMealThumb"
+    [alt]="recipe.strMeal"
+    class="aspect-[1/1.5] object-cover"
+  />
+  <button
+    (click)="onFavorite($event)"
+    class="hidden justify-center items-center self-start absolute z-50 group-hover:flex mr-3 mt-3"
+  >
+    <fa-icon
+      class="mx-auto text-lg w-5 h-5"
+      [ngClass]="{
+        'text-red-400': isFavorited(),
+        'text-white': !isFavorited()
+      }"
+      [icon]="isFavorited() ? faHeartSolid : faHeart"
+    ></fa-icon>
+  </button>
+</div>
