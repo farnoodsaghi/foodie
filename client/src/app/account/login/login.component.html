@@ -1,0 +1,51 @@
+<div class="flex w-full h-full justify-center items-center mt-16">
+  <div class="flex w-2/5 h-4/5 bg-white rounded-md shadow-lg p-7 mx-auto">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="w-full h-full">
+      <div class="flex flex-col justify-between items-center gap-4 w-full">
+        <p class="text-red-400" *ngIf="loginError">
+          *{{ loginError | titlecase }}
+        </p>
+        <div class="flex flex-col justify-center items-start gap-2">
+          <label for="email">Email</label>
+          <div
+            class="flex flex-row justify-between items-center p-2.5 bg-light-grey text-coal-black rounded-md font-rubik font-light"
+          >
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              class="bg-transparent border-0 focus:outline-none focus:shadow-none focus:ring-0 focus:border-0 w-96 mx-3 placeholder:text-dark-grey"
+            />
+          </div>
+        </div>
+        <div class="flex flex-col justify-center items-start gap-2">
+          <label for="password">Password</label>
+          <div
+            class="flex flex-row justify-between items-center p-2.5 bg-light-grey text-coal-black rounded-md font-rubik font-light"
+          >
+            <input
+              type="password"
+              id="password"
+              formControlName="password"
+              class="bg-transparent border-0 focus:outline-none focus:shadow-none focus:ring-0 focus:border-0 w-96 mx-3 placeholder:text-dark-grey"
+            />
+          </div>
+        </div>
+        <div class="flex flex-col justify-center items-center mt-5 gap-2">
+          <button
+            type="submit"
+            class="flex justify-center items-center bg-coal-black text-lighter-grey py-3 w-[26.75rem] rounded-md"
+          >
+            Login
+          </button>
+          <p class="text-coal-black font-rubik font-light">
+            Don't have an account?
+            <a class="font-normal cursor-pointer" routerLink="/account/register"
+              >Sign up</a
+            >
+          </p>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
