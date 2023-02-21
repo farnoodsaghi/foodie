@@ -1,0 +1,14 @@
+<div class="flex flex-row justify-between items-start gap-4">
+  <fa-icon
+    class="text-red-500"
+    [icon]="faMinus"
+    (click)="onRemoveItem(ingredient)"
+  ></fa-icon>
+  <div
+    class="flex flex-row justify-between items-start gap-2"
+    (click)="onSelect(ingredient)"
+  >
+    <h5>{{ ingredient.name | titlecase }}</h5>
+    <p>({{ ingredient.amount | titlecase }})</p>
+  </div>
+</div>
