@@ -1,0 +1,44 @@
+<div
+  class="flex flex-row justify-between items-center p-3.5 bg-light-grey text-coal-black rounded-md font-rubik font-light mb-10"
+>
+  <form
+    class="flex flex-row justify-between items-center"
+    [formGroup]="shoppingListForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="flex justify-center items-center">
+      <input
+        type="text"
+        formControlName="name"
+        placeholder="Item"
+        [readonly]="selectedItem.recipeId"
+        [ngClass]="{ 'text-dark-grey': selectedItem.recipeId }"
+        class="bg-transparent border-0 focus:outline-none focus:shadow-none focus:ring-0 focus:border-0 w-80 mx-3 placeholder:text-dark-grey"
+      />
+    </div>
+    <div class="flex justify-center items-center border-l-2 border-coal-black">
+      <input
+        type="text"
+        formControlName="amount"
+        placeholder="Amount"
+        class="bg-transparent border-0 focus:outline-none focus:shadow-none focus:ring-0 focus:border-0 w-45 mx-6 placeholder:text-dark-grey"
+      />
+    </div>
+    <div class="flex flex-row justify-between items-center gap-2">
+      <button
+        type="submit"
+        class="flex flex-row justify-center items-center bg-coal-black text-white w-10 h-10 rounded-md"
+      >
+        <fa-icon [icon]="faPen" *ngIf="selectedItem.name"></fa-icon>
+        <fa-icon [icon]="faPlus" *ngIf="!selectedItem.name"></fa-icon>
+      </button>
+      <button
+        type="button"
+        class="flex flex-row justify-center items-center bg-yellow-500 text-white w-10 h-10 rounded-md"
+        (click)="onClear()"
+      >
+        <fa-icon [icon]="faXMark"></fa-icon>
+      </button>
+    </div>
+  </form>
+</div>
