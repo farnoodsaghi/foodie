@@ -1,0 +1,13 @@
+<main class="h-full w-full mt-10 mb-16">
+  <div class="mx-14 mb-6">
+    <div
+      class="grid xl:grid-cols-7 lg:grid-cols-6 md:grid-cols-5 sm:grid-cols-4 auto-rows-[minmax(min-content,6rem)] gap-6"
+    >
+      <app-recipe-item
+        *ngFor="let recipe of recipes"
+        [recipe]="recipe"
+        [routerLink]="['/recipes', recipe.idMeal]"
+      ></app-recipe-item>
+    </div>
+  </div>
+</main>
