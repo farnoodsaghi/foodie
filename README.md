@@ -2,7 +2,7 @@
 
 ---
 
-## * Running client app
+## Running client app
 
 ### 1. Afer clonning the project on your local machine, cd to the client directory and install client dependencies, like so:
 ```
@@ -17,7 +17,7 @@ ng serve
 ```
 
 ---
-## * Running express server
+## Running express server
 
 ### To run the server, first cd to the server directory and install server dependencies, like so:
 ```
