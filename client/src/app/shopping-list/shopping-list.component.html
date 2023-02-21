@@ -1,0 +1,12 @@
+<div
+  class="flex flex-col justify-between items-center w-full h-full gap-6 mt-10 mb-16"
+>
+  <app-shopping-list-edit></app-shopping-list-edit>
+  <h4 *ngIf="!shoppingList || shoppingList.length === 0">
+    Your shopping list is empty. Add something!
+  </h4>
+  <app-shopping-list-item
+    *ngFor="let ingredient of shoppingList"
+    [ingredient]="ingredient"
+  ></app-shopping-list-item>
+</div>
