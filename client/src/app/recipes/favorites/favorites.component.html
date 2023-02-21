@@ -1,0 +1,15 @@
+<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+<main
+  class="flex justify-center items-center h-full w-full mt-10 mb-16"
+  *ngIf="!isLoading && recipes.length === 0"
+>
+  <div class="mx-14 mb-6">
+    <div>
+      <h4>You have no favorite recipes. Add some!</h4>
+    </div>
+  </div>
+</main>
+<app-recipe-grid-list
+  *ngIf="!isLoading && recipes.length > 0"
+  [recipes]="recipes"
+></app-recipe-grid-list>
