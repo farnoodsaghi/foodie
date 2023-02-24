@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { take } from 'rxjs';
 import { AuthService } from '../auth.service';
 import { User } from '../user.model';
 import { UserService } from '../user.service';
@@ -31,17 +32,20 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     if (this.registerForm.valid) {
       this.signupError = null;
-      this.authService.register(this.registerForm.value).subscribe(
-        (res: any) => {
-          this.userService.user.next(new User(res.name, res.email));
-          localStorage.setItem('token', res.token);
-          this.router.navigate(['/']);
-        },
-        (error) => {
-          this.signupError = error.error.message;
-          console.log(error);
-        }
-      );
+      this.authService
+        .register(this.registerForm.value)
+        .pipe(take(1))
+        .subscribe(
+          (res: any) => {
+            this.userService.user.next(new User(res.name, res.email));
+            localStorage.setItem('token', res.token);
+            this.router.navigate(['/']);
+          },
+          (error) => {
+            this.signupError = error.error.message;
+            console.log(error);
+          }
+        );
       this.registerForm.reset();
     } else {
       this.signupError = 'invalid input';
