@@ -2,7 +2,11 @@
   class="flex items-center text-lg cursor-pointer font-normal font-lato text-dark-grey"
 >
   <h4
-    routerLinkActive="text-coal-black font-semibold"
+    [routerLinkActive]="
+      isSideBarItem
+        ? 'text-white font-semibold'
+        : 'text-coal-black font-semibold'
+    "
     [routerLinkActiveOptions]="{ exact: true }"
     routerLink="{{ navItem.url }}"
   >

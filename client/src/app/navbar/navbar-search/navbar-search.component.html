@@ -1,18 +1,25 @@
 <div
-  class="flex flex-row justify-between items-center p-3.5 bg-light-grey text-coal-black rounded-full font-rubik font-light"
+  class="flex flex-row justify-between items-center p-3.5 bg-light-grey text-coal-black rounded-full font-rubik font-light w-full"
 >
-  <form [formGroup]="searchForm">
-    <input
-      type="text"
-      id="search-input"
-      placeholder="Search recipes"
-      autocomplete="off"
-      class="bg-transparent border-0 focus:outline-none focus:shadow-none focus:ring-0 focus:border-0 w-80 mx-3 placeholder:text-dark-grey"
-      formControlName="searchQuery"
-    />
-    <fa-icon
-      class="mx-3 text-lg text-dark-grey"
-      [icon]="faMagnifyingGlass"
-    ></fa-icon>
+  <form
+    [formGroup]="searchForm"
+    class="flex flex-row justify-between items-center w-full"
+  >
+    <div class="min-w-0">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search recipes"
+        autocomplete="off"
+        class="bg-transparent border-0 focus:outline-none focus:shadow-none focus:ring-0 focus:border-0 mx-3 placeholder:text-dark-grey"
+        formControlName="searchQuery"
+      />
+    </div>
+    <div>
+      <fa-icon
+        class="mx-3 text-lg text-dark-grey"
+        [icon]="faMagnifyingGlass"
+      ></fa-icon>
+    </div>
   </form>
 </div>

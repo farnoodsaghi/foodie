@@ -11,4 +11,5 @@ export class NavbarItemComponent {
     name: string;
     url: string;
   };
+  @Input() isSideBarItem: boolean;
 }

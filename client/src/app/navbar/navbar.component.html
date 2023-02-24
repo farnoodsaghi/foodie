@@ -1,5 +1,5 @@
 <div
-  class="flex flex-row justify-between items-center py-8 px-14 bg-pearl-white"
+  class="flex flex-row gap-2 justify-between items-center py-8 sm:gap-0 sm:px-14 bg-pearl-white px-6"
 >
   <div
     class="lg:flex hidden flex-row items-center justify-between gap-14 relative"
@@ -12,28 +12,36 @@
       (click)="onLogout()"
     ></app-navbar-item>
   </div>
+  <fa-icon
+    class="text-3xl z-50 lg:hidden"
+    [ngClass]="{
+      'text-coal-black': !isSideBarOpen,
+      'text-white': isSideBarOpen
+    }"
+    [icon]="isSideBarOpen ? xMark : faBars"
+    (click)="toggleSideBar()"
+  ></fa-icon>
   <div
     class="flex lg:hidden static"
     [ngClass]="{
       'fixed top-0 left-0 w-3/5 min-h-full z-40 bg-coal-black': isSideBarOpen
     }"
   >
-    <fa-icon
-      class="text-3xl"
-      [ngClass]="{
-        'text-coal-black': !isSideBarOpen,
-        'text-white': isSideBarOpen
-      }"
-      [icon]="isSideBarOpen ? xMark : faBars"
-      (click)="toggleSideBar()"
-    ></fa-icon>
     <div *ngIf="isSideBarOpen" class="flex flex-col">
       <div class="flex flex-col justify-between gap-10 py-32 px-14">
         <div *ngFor="let item of navItemsList" class="">
-          <app-navbar-item [navItem]="item"></app-navbar-item>
+          <app-navbar-item
+            [navItem]="item"
+            [isSideBarItem]="true"
+          ></app-navbar-item>
         </div>
+        <app-navbar-item
+          [navItem]="authLink"
+          [isSideBarItem]="true"
+          (click)="onLogout()"
+        ></app-navbar-item>
       </div>
     </div>
   </div>
-  <app-navbar-search></app-navbar-search>
+  <app-navbar-search class="w-80 min-w-0 shrink"></app-navbar-search>
 </div>

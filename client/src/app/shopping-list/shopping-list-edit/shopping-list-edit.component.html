@@ -1,27 +1,29 @@
 <div
-  class="flex flex-row justify-between items-center p-3.5 bg-light-grey text-coal-black rounded-md font-rubik font-light mb-10"
+  class="flex flex-row justify-between items-center p-3.5 bg-light-grey text-coal-black rounded-md font-rubik font-light mb-10 mx-6"
 >
   <form
-    class="flex flex-row justify-between items-center"
+    class="flex flex-row justify-between items-center w-full"
     [formGroup]="shoppingListForm"
     (ngSubmit)="onSubmit()"
   >
-    <div class="flex justify-center items-center">
+    <div class="flex justify-center items-center w-80 shrink">
       <input
         type="text"
         formControlName="name"
         placeholder="Item"
         [readonly]="selectedItem.recipeId"
         [ngClass]="{ 'text-dark-grey': selectedItem.recipeId }"
-        class="bg-transparent border-0 focus:outline-none focus:shadow-none focus:ring-0 focus:border-0 w-80 mx-3 placeholder:text-dark-grey"
+        class="bg-transparent border-0 focus:outline-none focus:shadow-none focus:ring-0 focus:border-0 mx-3 placeholder:text-dark-grey w-full"
       />
     </div>
-    <div class="flex justify-center items-center border-l-2 border-coal-black">
+    <div
+      class="flex justify-center items-center border-l-2 border-coal-black w-45 shrink"
+    >
       <input
         type="text"
         formControlName="amount"
         placeholder="Amount"
-        class="bg-transparent border-0 focus:outline-none focus:shadow-none focus:ring-0 focus:border-0 w-45 mx-6 placeholder:text-dark-grey"
+        class="bg-transparent border-0 focus:outline-none focus:shadow-none focus:ring-0 focus:border-0 mx-6 placeholder:text-dark-grey w-full"
       />
     </div>
     <div class="flex flex-row justify-between items-center gap-2">

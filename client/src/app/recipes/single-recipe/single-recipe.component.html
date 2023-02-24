@@ -1,13 +1,15 @@
 <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
 <div class="flex w-full h-full" *ngIf="!isLoading">
-  <div class="mx-14 mt-10 mb-16">
-    <div class="flex flex-row justify-between items-start w-full h-full gap-6">
-      <div class="flex justify-center items-start w-2/5 h-full">
+  <div class="mx-6 md:mx-14 mt-10 mb-16">
+    <div
+      class="flex flex-col md:flex-row justify-between items-center md:items-start w-full h-full gap-6"
+    >
+      <div class="flex justify-center items-start md:w-2/5 w-2/3 h-full">
         <img [src]="recipe.strMealThumb" [alt]="recipe.strMeal" class="" />
       </div>
 
       <div
-        class="flex flex-col justify-start items-start w-3/5 h-full gap-8 text-coal-black"
+        class="flex flex-col justify-start items-start md:w-3/5 flex-1 h-full gap-8 text-coal-black"
       >
         <div class="flex flex-col gap-1">
           <h2 class="font-lato text-3xl font-bold">

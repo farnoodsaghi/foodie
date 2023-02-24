@@ -1,5 +1,7 @@
 <div class="flex w-full h-full justify-center items-center mt-16">
-  <div class="flex w-2/5 h-4/5 bg-white rounded-md shadow-lg p-7 mx-auto">
+  <div
+    class="flex w-96 flex-1 max-w-[29rem] h-4/5 bg-white rounded-md shadow-lg p-7 mx-auto"
+  >
     <form
       [formGroup]="registerForm"
       (ngSubmit)="onSubmit()"
@@ -9,49 +11,51 @@
         <p class="text-red-400" *ngIf="signupError">
           *{{ signupError | titlecase }}
         </p>
-        <div class="flex flex-col justify-center items-start gap-2">
+        <div class="flex flex-col justify-center items-start gap-2 w-full">
           <label for="name">Display name</label>
           <div
-            class="flex flex-row justify-between items-center p-2.5 bg-light-grey text-coal-black rounded-md font-rubik font-light"
+            class="flex flex-row justify-between items-center p-2.5 bg-light-grey text-coal-black rounded-md font-rubik font-light w-full"
           >
             <input
               type="text"
               id="name"
               formControlName="name"
-              class="bg-transparent border-0 focus:outline-none focus:shadow-none focus:ring-0 focus:border-0 w-96 mx-3 placeholder:text-dark-grey"
+              class="bg-transparent border-0 focus:outline-none focus:shadow-none focus:ring-0 focus:border-0 mx-3 placeholder:text-dark-grey"
             />
           </div>
         </div>
-        <div class="flex flex-col justify-center items-start gap-2">
+        <div class="flex flex-col justify-center items-start gap-2 w-full">
           <label for="email">Email</label>
           <div
-            class="flex flex-row justify-between items-center p-2.5 bg-light-grey text-coal-black rounded-md font-rubik font-light"
+            class="flex flex-row justify-between items-center p-2.5 bg-light-grey text-coal-black rounded-md font-rubik font-light w-full"
           >
             <input
               type="email"
               id="email"
               formControlName="email"
-              class="bg-transparent border-0 focus:outline-none focus:shadow-none focus:ring-0 focus:border-0 w-96 mx-3 placeholder:text-dark-grey"
+              class="bg-transparent border-0 focus:outline-none focus:shadow-none focus:ring-0 focus:border-0 mx-3 placeholder:text-dark-grey"
             />
           </div>
         </div>
-        <div class="flex flex-col justify-center items-start gap-2">
+        <div class="flex flex-col justify-center items-start gap-2 w-full">
           <label for="password">Password</label>
           <div
-            class="flex flex-row justify-between items-center p-2.5 bg-light-grey text-coal-black rounded-md font-rubik font-light"
+            class="flex flex-row justify-between items-center p-2.5 bg-light-grey text-coal-black rounded-md font-rubik font-light w-full"
           >
             <input
               type="password"
               id="password"
               formControlName="password"
-              class="bg-transparent border-0 focus:outline-none focus:shadow-none focus:ring-0 focus:border-0 w-96 mx-3 placeholder:text-dark-grey"
+              class="bg-transparent border-0 focus:outline-none focus:shadow-none focus:ring-0 focus:border-0 mx-3 placeholder:text-dark-grey"
             />
           </div>
         </div>
-        <div class="flex flex-col justify-center items-center mt-5 gap-2">
+        <div
+          class="flex flex-col justify-center items-center mt-5 gap-2 w-full"
+        >
           <button
             type="submit"
-            class="flex justify-center items-center bg-coal-black text-lighter-grey py-3 w-[26.75rem] rounded-md"
+            class="flex justify-center items-center bg-coal-black text-lighter-grey py-3 rounded-md w-full"
           >
             Sign up
           </button>
